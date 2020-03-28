@@ -2,12 +2,14 @@
 $pwd = (pwd)
 
 # then we just execute the docker command, to run interactively.
-docker run --volume "${pwd}:/app" --interactive --tty testing/docker-context /bin/bash
+docker run --volume "${pwd}:/app" -e "AWS_REGION=ap-southeast-2" --interactive --tty testing/docker-context /bin/bash
 
 # docker = use the cli
 # run = we want to run a command 
 # --volume = flag for creating a volume
 # "${pwd}:/app" = mount the current working diretory to app in the container
+# -e = set an env variable
+# "AWS_REGION=ap-southeast-2" = just setting this as a sample env variable
 # --interactive = run the command interactively
 # --tty = link the std streams
 # testing/docker-context = the container to run
