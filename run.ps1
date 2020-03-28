@@ -2,7 +2,7 @@
 $pwd = (pwd)
 
 # then we just execute the docker command, to run interactively.
-docker run --volume "${pwd}:/app" -e "AWS_REGION=ap-southeast-2" --interactive --tty testing/docker-context /bin/bash
+docker run --volume "${pwd}:/app" -e "AWS_REGION=ap-southeast-2" --interactive --tty running-ansible-interactively /bin/bash
 
 # docker = use the cli
 # run = we want to run a command 
@@ -12,5 +12,5 @@ docker run --volume "${pwd}:/app" -e "AWS_REGION=ap-southeast-2" --interactive -
 # "AWS_REGION=ap-southeast-2" = just setting this as a sample env variable
 # --interactive = run the command interactively
 # --tty = link the std streams
-# testing/docker-context = the container to run
+# running-ansible-interactively = the container to run
 # /bin/bash = the command to run 
